@@ -1,0 +1,12 @@
+{
+  "empleados": [
+    { "id": 101, "nombre": "Carlos Mendoza", "cargo": "Analista Financiero", "salario_base": 1200, "horas_extras": 8 },
+    { "id": 102, "nombre": "María Rodríguez", "cargo": "Gerente de Operaciones", "salario_base": 2500, "horas_extras": 2 },
+    { "id": 103, "nombre": "Alejandro Silva", "cargo": "Asistente Administrativo", "salario_base": 800, "horas_extras": 15 }
+  ],
+  "facturas_gastos": [
+    { "id_factura": "F-001", "proveedor": "Suministros Oficina C.A.", "monto": 450.00, "categoria": "Operativo", "deducible": true },
+    { "id_factura": "F-002", "proveedor": "Servicios de Catering S.A.", "monto": 1200.00, "categoria": "Eventos", "deducible": false },
+    { "id_factura": "F-003", "proveedor": "Equipos Tecnológicos R.L.", "monto": 850.00, "categoria": "Activos", "deducible": true }
+  ]
+}

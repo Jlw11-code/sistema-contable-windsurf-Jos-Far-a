@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Contable - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema Contable</h1>
+            <p>Panel de Control Financiero</p>
+        </header>
+
+        <!-- KPIs -->
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <h3>Total Nómina Neta</h3>
+                <p id="kpi-nomina" class="kpi-value">$0.00</p>
+            </div>
+            <div class="kpi-card">
+                <h3>Total Deducciones Fiscales</h3>
+                <p id="kpi-deducciones" class="kpi-value">$0.00</p>
+            </div>
+            <div class="kpi-card">
+                <h3>Impuesto Estimado a Pagar</h3>
+                <p id="kpi-impuesto" class="kpi-value">$0.00</p>
+            </div>
+        </section>
+
+        <!-- Formularios -->
+        <section class="forms-section">
+            <div class="form-container">
+                <h2>Agregar Nuevo Empleado</h2>
+                <form id="form-empleado">
+                    <input type="text" id="emp-nombre" placeholder="Nombre completo" required>
+                    <input type="text" id="emp-cargo" placeholder="Cargo" required>
+                    <input type="number" id="emp-salario" placeholder="Salario Base" required min="0" step="0.01">
+                    <input type="number" id="emp-horas" placeholder="Horas Extras" required min="0" step="0.5">
+                    <button type="submit">Agregar Empleado</button>
+                </form>
+            </div>
+            <div class="form-container">
+                <h2>Agregar Nueva Factura</h2>
+                <form id="form-factura">
+                    <input type="text" id="fact-id" placeholder="ID Factura (ej: F-004)" required>
+                    <input type="text" id="fact-proveedor" placeholder="Proveedor" required>
+                    <input type="number" id="fact-monto" placeholder="Monto" required min="0" step="0.01">
+                    <input type="text" id="fact-categoria" placeholder="Categoría" required>
+                    <label>
+                        <input type="checkbox" id="fact-deducible">
+                        Deducible Fiscal
+                    </label>
+                    <button type="submit">Agregar Factura</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tablas -->
+        <section class="tables-section">
+            <div class="table-container">
+                <h2>Resumen de Nómina</h2>
+                <table id="tabla-nomina">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                            <th>Salario Base</th>
+                            <th>Horas Extras</th>
+                            <th>Valor H. Extra</th>
+                            <th>SS (4%)</th>
+                            <th>ISLR (10%)</th>
+                            <th>Salario Neto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-nomina"></tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <h2>Auditoría de Gastos</h2>
+                <table id="tabla-gastos">
+                    <thead>
+                        <tr>
+                            <th>ID Factura</th>
+                            <th>Proveedor</th>
+                            <th>Categoría</th>
+                            <th>Monto</th>
+                            <th>Deducible</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-gastos"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
